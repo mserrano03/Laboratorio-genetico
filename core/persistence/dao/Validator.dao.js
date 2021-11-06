@@ -10,3 +10,22 @@ exports.basesValidador = async function (matriz) {
     }
     return result;
 }
+
+exports.converterArray = async function (string) {
+    let arr = [];
+    let nwString = string.replace(/ /g, "");
+    let strAux = "";
+    for (let i = 0; i < nwString.length; i++) {
+        const element = nwString[i];
+        if (element === ",") {
+            arr.push(strAux);
+            strAux = "";
+        } else if ((i+1) === nwString.length) {
+            strAux += element;
+            arr.push(strAux);
+        } else {
+            strAux += element;
+        }
+    }
+    return arr;
+}

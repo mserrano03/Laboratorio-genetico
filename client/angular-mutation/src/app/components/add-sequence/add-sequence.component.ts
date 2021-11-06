@@ -19,7 +19,6 @@ export class AddSequenceComponent implements OnInit {
     const sequence = new Sequence();
     sequence.string = this.sequence;
 
-    // this.sequenceService.addSequence(sequence);
     this.sequenceService.addSequence(sequence).subscribe(i => {
       this.router.navigate(['/']);
     });

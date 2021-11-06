@@ -45,16 +45,17 @@ exports.getMutationReport = async function () {
 }
 
 exports.hasMutation = async function (params) {
+    let stringAdn = await MutationValidator.converterArray(params.string);
     // Validador del arreglo de Strings representando a la secuencia de ADN
-    let adn = await MutationValidator.basesValidador(params.adn)
+    let adn = await MutationValidator.basesValidador(stringAdn)
     // Contador de secuencias horizontales
-    let recHorDI = await MutationFind.recorridoHorizontal(params.adn);
+    let recHorDI = await MutationFind.recorridoHorizontal(stringAdn);
     // COntador de secuencias vertical
-    let recVerDI = await MutationFind.recorridoVertical(params.adn);
+    let recVerDI = await MutationFind.recorridoVertical(stringAdn);
     // Contador de secuencias Oblicuo de izquierda a derecha
-    let recIzDer = await MutationFind.recorridoOblicuoID(params.adn);
+    let recIzDer = await MutationFind.recorridoOblicuoID(stringAdn);
     // COntador de secuencias Oblicuo de derecha a izquierda
-    let recDerIz = await MutationFind.recorridoOblicuoDI(params.adn);
+    let recDerIz = await MutationFind.recorridoOblicuoDI(stringAdn);
     if (adn) {
         if ((recHorDI + recVerDI + recIzDer + recDerIz) >= 2) { // Con mutacion en la secuencia de ADN
             await postMutation(params.adn, true);
