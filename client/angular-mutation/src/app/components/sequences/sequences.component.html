@@ -1,0 +1,13 @@
+<div class="main-container">
+  <app-report></app-report>
+  <div class="table-container">
+    <div class="header">
+      <div class="row">
+        <div class="sequence">Secuencia ADN</div>
+        <div class="isMutation">Estado</div>
+        <div class="date">Fecha de ejecución</div>
+      </div>
+    </div>
+    <app-sequence *ngFor="let sequence of sequences" [sequence]="sequence"></app-sequence>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "name": "laboratorio-genetico",
+  "version": "1.0.0",
+  "description": "Laboratorio genetico que detecta si una persona tiene diferencias geneticas basandose en su secuencia de ADN.",
+  "main": "index.js",
+  "scripts": {
+    "start": "SET NODE_ENV=production & node index",
+    "dev": "nodemon server"
+  },
+  "author": "Ing. Marco Serrano",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/cli": "^13.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.4",
+    "mongoose": "^5.13.9",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13"
+  }
+}

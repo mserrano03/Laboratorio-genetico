@@ -1,0 +1,19 @@
+.container{
+  text-align:center;
+  border: black 1px solid;
+  padding: 0px 25px 0px 25px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.center{
+ display:inline-block;
+}
