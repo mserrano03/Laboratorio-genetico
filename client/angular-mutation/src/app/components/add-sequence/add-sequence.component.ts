@@ -20,7 +20,13 @@ export class AddSequenceComponent implements OnInit {
     sequence.string = this.sequence;
 
     this.sequenceService.addSequence(sequence).subscribe(i => {
-      this.router.navigate(['/']);
+      if (i) {
+        alert("¡Secuencia de ADN con mutación!");
+      } else if (i === 0) {
+        alert("¡Favor de escribir solor bases validas 'A', 'C', 'T' o 'G'!");
+      } else {
+        alert("¡Secuencia de ADN sin mutación!");
+      }
     });
   }
 

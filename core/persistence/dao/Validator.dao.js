@@ -11,6 +11,7 @@ exports.basesValidador = async function (matriz) {
     return result;
 }
 
+// Convierte el String recibido por el cliente y lo convierte en un arreglo de strings
 exports.converterArray = async function (string) {
     let arr = [];
     let nwString = string.replace(/ /g, "");
